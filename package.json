@@ -5,11 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build-css" : "tailwindcss build styles/style.css -o styles/tailwind.css"
   },
   "dependencies": {
+    "@simonwep/pickr": "^1.7.2",
     "next": "9.5.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "styled-components": "^5.1.1",
+    "tailwindcss": "^1.7.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "latest",
+    "@types/node": "^14.6.0",
+    "@types/react": "^16.9.46",
+    "typescript": "^3.9.7"
   }
 }
