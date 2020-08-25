@@ -2,11 +2,12 @@ import React,{useContext,useState,useEffect,useRef} from 'react'
 import {CanvasContext} from './CanvasContext'
 
 
-export default function Canvas(){
+export default function Canvas({classes}){
     const {color,lineSize} = useContext(CanvasContext);
     const [isDrawing, setIsDrawing] = useState(false);
     const canvasRef = useRef(null);
     const contextRef = useRef(null);
+    const [visible,setVisible] = useState(true); 
 
         useEffect(()=>{
             const canvas = canvasRef.current;
@@ -45,11 +46,12 @@ export default function Canvas(){
             contextRef.current.stroke();
           }
     return(
-        <canvas
+        <canvas className={visible ? `absolute top-0 visible ${classes}` : `absolute top-0 invisible ${classes}`}
           onMouseDown={startDrawing}
           onMouseUp={finishDrawing}
           onMouseMove={draw}
           ref={canvasRef}
           />
+        
     )
 }
