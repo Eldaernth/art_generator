@@ -6,6 +6,7 @@ export function CanvasProvider(props){
     const [color, setColor] = useState('');
     const [lineSize, setLineSize] = useState(1);
     const [layers,setLayers] = useState([{layer:0,checked:true}])
+    const [symmetry,setSymmetry] = useState(false);
 
     const canvasMethods = {
         colorChange : (color)=> {setColor(color.toHEXA())},
@@ -18,10 +19,11 @@ export function CanvasProvider(props){
                 }
                 return item;
             }))
-        }          
+        },
+        changeSymmetryMode:()=>{setSymmetry(!symmetry)}         
     }
     return (
-        <CanvasContext.Provider value={{color,canvasMethods,lineSize,layers}}>
+        <CanvasContext.Provider value={{color,canvasMethods,lineSize,layers,symmetry}}>
             {props.children}
         </CanvasContext.Provider>
     )

@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Canvas from '../components/Canvas'
 import LineChanger from '../components/LineChanger'
 import LayerBox from '../components/LayerBox';
+import Symmetry from '../components/SymmetryButton';
 
 
 const Picker = dynamic(()=>import('../components/Picker'))
@@ -25,6 +26,7 @@ function App() {
       <div className="bg-gray-900 text-white z-50 absolute top-0 left-0">
         <LineChanger/>  
         <Picker/>
+        <Symmetry/>
         </div>
         <div id="drawingPanel">
           {drawing.map(canvas=>

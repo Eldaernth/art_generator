@@ -3,7 +3,7 @@ import {CanvasContext} from './CanvasContext'
 
 
 export default function Canvas({layer}){
-    const {color,lineSize,layers} = useContext(CanvasContext);
+    const {color,lineSize,layers,symmetry} = useContext(CanvasContext);
     const [isDrawing, setIsDrawing] = useState(false);
     const canvasRef = useRef(null);
     const contextRef = useRef(null);
